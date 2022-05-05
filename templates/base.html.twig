@@ -17,7 +17,23 @@
 			{{ encore_entry_script_tags('app') }}
 		{% endblock %}
 	</head>
+	<header>
+		<nav>
+			<ul>
+				<a href="{{path('app_default')}}">Accueil</a>
+				<a href="{{path('app_produit')}}">Produit</a>
+			</ul>
+		</nav>
+	</header>
 	<body>
-		{% block body %}{% endblock %}
+		<main class="container">
+			{% for type, messages in app.flashes %}
+				{% for m in messages %}
+					<p class="alert alert-{{type}}">{{m}}</p>
+				{% endfor %}
+			{% endfor %}
+
+			{% block body %}{% endblock %}
+		</main>
 	</body>
 </html>
