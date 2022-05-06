@@ -1,0 +1,48 @@
+{% extends 'base.html.twig' %}
+
+
+{% block body %}
+	<h1>{{produit.Nom}}</h1>
+	{% if produit.image is not null %}
+		<img src="{{ asset ('uploads/' ~ produit.image) }}" alt="" style="width: 500px;">
+	{% endif %}
+	<p>{{produit.Description}}</p>
+	<p>{{produit.Prix}}</p>
+	<a href="{{path('produit_edit', {'id' : produit.id})}}" class="btn btn-primary">Editer</a>
+	<a href="{{ path('produit_delete', {'id' : produit.id}) }}" class="btn btn-primary">
+		Supprimer
+	</a>
+
+	<h3>Ajoutez ce NFT à votre panier !
+	</h3>
+
+	{{form(ajout)}}
+
+	</br>
+	<p>********** Vérification panier **********
+	</p>
+
+	<table class="table">
+		<thead>
+			<tr>
+				<th>ID</th>
+				<th>Produit</th>
+				<th>Quantité</th>
+			</tr>
+		</thead>
+		<tbody>
+			{% for p in cp %}
+				<tr>
+					<td>
+						{{p.id}}</td>
+					<td>
+						{{p.Produit}}</td>
+					<td>
+						{{p.Quantite}}</td>
+				</tr>
+			</tbody>
+		</tbody>
+	</tr>
+{% else %}
+	<p>Liste d'article dans cp :  vide</p>
+{% endfor %}</tbody></table>{% endblock %}
