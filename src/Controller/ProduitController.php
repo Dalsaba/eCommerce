@@ -4,6 +4,7 @@ namespace App\Controller;
 
 use App\Form\ProduitType;
 use App\Entity\Produit;
+use App\Entity\Panier;
 use App\Form\ContenuPanierType;
 use App\Entity\ContenuPanier;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -27,7 +28,8 @@ class ProduitController extends AbstractController
         }
 
        $em = $doctrine ->getManager() ;
-       $cp = new ContenuPanier($produit);
+       $panier = $em -> getRepository(Panier::class)-> findOneBy(['Etat' => false]);
+       $cp = new ContenuPanier($produit, $panier);
        $form = $this->createForm(ContenuPanierType::class, $cp);
        $form -> handleRequest($request);
        if ($form-> isSubmitted() && $form->isValid()) {

@@ -5,5 +5,41 @@
 
 {% block body %}
 	<h1>
-		Panier</h1>
-{% endblock %}
+		Panier n°
+		{{panier.id}}</h1>
+	<table class="table">
+		<thead>
+			<tr>
+				<th>ID</th>
+				<th>Produit</th>
+				<th>Quantité</th>
+			</tr>
+		</thead>
+		<tbody>
+			{% set total = 0 %}
+			{% for cp in panier.contenuPaniers %}
+				{% set total = total + (cp.Produit.Prix * cp.Quantite) %}
+			{% endfor %}
+
+			{% for cp in panier.contenuPaniers %}
+				<tr>
+					<td>
+						{{cp.id}}</td>
+					<td>
+						{{cp.Produit}}</td>
+					<td>
+						{{cp.Quantite}}</td>
+					<td>
+						{{cp.Produit.Prix}}</td>
+					<td>
+						<a href="{{ path('app_contenu_panier_delete', {'id' : cp.id}) }}" class="btn btn-primary">
+							Supprimer
+						</a>
+					</td>
+				</tr>
+			</tbody>
+		</tbody>
+	{% else %}
+		<p>Liste d'article dans cp :  vide</p>
+	{% endfor %}
+</tbody></table></br></br><h1>Total</h1><p>{{ total}}€ HT</p></br><a href="{{ path('app_panier_validate', {'id' : panier.id}) }}" class="btn btn-primary">Valider le panier</a>{% endblock %}

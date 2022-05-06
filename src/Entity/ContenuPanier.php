@@ -28,9 +28,10 @@ class ContenuPanier
 
 
 
-    public function __construct(Produit $P) {
+    public function __construct(Produit $P, Panier $panier) {
         $this ->Date = new \DateTime();
         $this ->Produit = $P;
+        $this ->Panier = $panier;
     }
 
 

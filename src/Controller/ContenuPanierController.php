@@ -42,7 +42,7 @@ class ContenuPanierController extends AbstractController
 
 
 
-        return $this -> redirectToRoute('app_contenu_panier') ;
+        return $this -> redirectToRoute('app_panier') ;
     }
 
 }
