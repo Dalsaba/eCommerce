@@ -1,0 +1,37 @@
+{% extends 'base.html.twig' %}
+
+
+{% block body %}
+
+<h1>Commande n°
+	{{panier.id}}
+	- Livrée le
+	{{panier.Date | date('d/m/Y')}}</h1>
+
+<table class="table">
+	<thead>
+		<tr>
+			<th>Panier id</th>
+			<th>Produit</th>
+			<th>Quantité</th>
+			<th>Prix</th>
+		</tr>
+	</thead>
+	<tbody>
+
+		{% for cp in panier.contenuPaniers %}
+			<tr>
+				<td>
+					{{panier.id}}</td>
+				<td>
+					{{cp.Produit}}</td>
+				<td>
+					{{cp.Quantite}}</td>
+				<td>
+					{{cp.Produit.Prix}}</td>
+			</tr>
+		</tbody>
+	</tbody>
+{% else %}
+	<p>Liste d'article dans cp :  vide</p>
+</tbody></table>{% endfor %}{% endblock %}

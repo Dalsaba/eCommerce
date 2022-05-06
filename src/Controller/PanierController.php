@@ -42,4 +42,37 @@ class PanierController extends AbstractController
             'panier'=> $panier,
         ]);
     }
+
+    #[Route('/panier/hist', name: 'app_panier_hist')]
+    public function hist(ManagerRegistry $doctrine): Response
+    {
+        $em = $doctrine ->getManager() ;
+
+        $paniers = $em -> getRepository(Panier::class)-> findby(array('Etat' => true));
+
+        return $this->render('panier/historique.htlm.twig', [
+            'controller_name' => 'PanierController',
+            'paniers'=> $paniers,
+        ]);
+    }
+
+    #[Route('/panier/hist/{id}', name: 'app_panier_hist_detail')]
+    public function histDetail(Panier $panier = null, ManagerRegistry $doctrine): Response
+    {
+
+        if ($panier == null) {
+            $this-> addFlash('danger', 'Article introuvable');
+
+            return $this -> redirectToRoute('app_panier_hist');
+        }
+
+/*         $em = $doctrine ->getManager() ;
+
+        $panier = $em -> getRepository(Panier::class)-> findby(array('id' => true)); */
+
+        return $this->render('panier/historiqueDetail.html.twig', [
+            'controller_name' => 'PanierController',
+            'panier'=> $panier,
+        ]);
+    }
 }

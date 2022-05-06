@@ -1,0 +1,41 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello PanierController!
+{% endblock %}
+
+{% block body %}
+<h1>Votre historique</h1>
+
+{% for panier in paniers %}
+
+	{% set total = 0 %}
+	{% for cp in panier.contenuPaniers %}
+		{% set total = total + (cp.Produit.Prix * cp.Quantite) %}
+	{% endfor %}
+
+	<table class="table">
+		<thead>
+			<tr>
+				<th>Commande n°</th>
+				<th>Montant</th>
+				<th>Date</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>
+					{{panier.id}}</td>
+				<td>
+					{{total}}</td>
+				<td>
+					{{panier.date | date('d/m/Y')}}</td>
+				<td>
+					<a href="{{path('app_panier_hist_detail', {'id' : panier.id})}}" class="btn btn-primary">Plus</a>
+				</td>
+			</tr>
+		</tbody>
+	</tbody>
+{% else %}
+	<p>
+		Historique vide</p>
+</tbody></table>{% endfor %}{% endblock %}
