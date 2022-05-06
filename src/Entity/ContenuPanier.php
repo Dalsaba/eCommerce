@@ -16,14 +16,19 @@ class ContenuPanier
     #[ORM\ManyToOne(targetEntity: Produit::class, inversedBy: 'contenuPaniers')]
     private $Produit;
 
-    #[ORM\ManyToOne(targetEntity: Panier::class, inversedBy: 'contenuPaniers')]
-    private $Panier;
-
     #[ORM\Column(type: 'integer')]
     private $Quantite;
 
     #[ORM\Column(type: 'date')]
     private $Date;
+
+
+
+    public function __construct(Produit $P) {
+        $this ->Date = new \DateTime();
+        $this ->Produit = $P;
+    }
+
 
     public function getId(): ?int
     {
@@ -38,18 +43,6 @@ class ContenuPanier
     public function setProduit(?Produit $Produit): self
     {
         $this->Produit = $Produit;
-
-        return $this;
-    }
-
-    public function getPanier(): ?Panier
-    {
-        return $this->Panier;
-    }
-
-    public function setPanier(?Panier $Panier): self
-    {
-        $this->Panier = $Panier;
 
         return $this;
     }

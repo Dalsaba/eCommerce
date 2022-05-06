@@ -4,5 +4,43 @@
 {% endblock %}
 
 {% block body %}
-	<h1>Produits</h1>
+	{# 	<h1>Produits</h1>
+		{% for p in produits %}
+	
+			<table class="table">
+				<thead>
+					<tr>
+						<th>Image</th>
+						<th>Nom</th>
+						<th>Description</th>
+						<th>Prix</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>
+							{% if p.image is not null %}
+								<img src="{{ asset ('uploads/' ~ p.image) }}" alt="" style="width: 200px;">
+							{% endif %}
+						</td>
+						<td>
+							{{p.Nom}}</td>
+						<td>
+							{{p.Description}}</td>
+						<td>
+							{{p.Prix}}</td>
+					</tr>
+				</tbody>
+			</td>
+			<td>
+				<a href="{{path('produit_edit', {'id' : p.id})}}" class="btn btn-primary">Editer</a>
+			</td>
+			<td>
+				<a href="{{ path('produit_delete', {'id' : p.id}) }}" class="btn btn-primary">
+					Supprimer
+				</a>
+			</td>
+		</tbody>
+	</tr>{% else %}
+	<p>Liste de produits vide</p>{% endfor %}</tbody></table><h1>Ajouter un produit</h1>{{form(ajout)}} #}
 {% endblock %}
