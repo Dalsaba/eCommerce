@@ -27,9 +27,13 @@ class Panier
     #[ORM\OneToMany(mappedBy: 'Panier', targetEntity: ContenuPanier::class)]
     private $contenuPaniers;
 
-    public function __construct()
+    public function __construct(User $user)
     {
         $this->contenuPaniers = new ArrayCollection();
+        $this->Etat = false;
+        $this->Utilisateur = $user;
+        $this ->Date = new \DateTime();
+
     }
 
     public function getId(): ?int
