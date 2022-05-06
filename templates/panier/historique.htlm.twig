@@ -1,10 +1,11 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello PanierController!
+{% block title %}
+	{{'Historique' | trans}}
 {% endblock %}
 
 {% block body %}
-<h1>Votre historique</h1>
+<h1>{{'Historique' | trans}}</h1>
 
 {% for panier in paniers %}
 
@@ -16,9 +17,9 @@
 	<table class="table">
 		<thead>
 			<tr>
-				<th>Commande n°</th>
-				<th>Montant</th>
-				<th>Date</th>
+				<th>{{'N°' | trans}}</th>
+				<th>{{'Montant' | trans}}</th>
+				<th>{{'Date' | trans}}</th>
 			</tr>
 		</thead>
 		<tbody>
@@ -30,12 +31,12 @@
 				<td>
 					{{panier.date | date('d/m/Y')}}</td>
 				<td>
-					<a href="{{path('app_panier_hist_detail', {'id' : panier.id})}}" class="btn btn-primary">Plus</a>
+					<a href="{{path('app_panier_hist_detail', {'id' : panier.id})}}" class="btn btn-primary">{{'Voir' | trans}}</a>
 				</td>
 			</tr>
 		</tbody>
 	</tbody>
 {% else %}
 	<p>
-		Historique vide</p>
+		{{'Historiques.Vide' | trans}}</p>
 </tbody></table>{% endfor %}{% endblock %}

@@ -1,18 +1,20 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello PanierController!
+{% block title %}
+	{{'Panier' | trans}}
 {% endblock %}
 
 {% block body %}
 	<h1>
-		Panier n°
+		{{'Panier' | trans}}
+		{{'Numero' | trans}}
 		{{panier.id}}</h1>
 	<table class="table">
 		<thead>
 			<tr>
 				<th>ID</th>
-				<th>Produit</th>
-				<th>Quantité</th>
+				<th>{{'Produit' | trans}}</th>
+				<th>{{'Quantité' | trans}}</th>
 			</tr>
 		</thead>
 		<tbody>
@@ -33,13 +35,13 @@
 						{{cp.Produit.Prix}}</td>
 					<td>
 						<a href="{{ path('app_contenu_panier_delete', {'id' : cp.id}) }}" class="btn btn-primary">
-							Supprimer
+							{{'Supprimer' | trans}}
 						</a>
 					</td>
 				</tr>
 			</tbody>
 		</tbody>
 	{% else %}
-		<p>Liste d'article vide</p>
+		<p>{{'Produits.Vide' | trans}}</p>
 	{% endfor %}
-</tbody></table></br></br><h1>Total</h1><p>{{ total}}€ HT</p></br><a href="{{ path('app_panier_validate', {'id' : panier.id}) }}" class="btn btn-primary">Valider le panier</a>{% endblock %}
+</tbody></table></br></br><h1>{{'Montant' | trans}}</h1><p>{{ total}}€ HT</p></br>{% if cp in panier.contenuPaniers %}<a href="{{ path('app_panier_validate', {'id' : panier.id}) }}" class="btn btn-primary">{{'Produits.Valider' | trans}}</a>{% endif %}{% endblock %}

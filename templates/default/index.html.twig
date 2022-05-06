@@ -1,20 +1,21 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello DefaultController!
+{% block title %}
+	{{'Homepage' | trans}}
 {% endblock %}
 {% block body %}
 
-	<h1>Homepage</h1>
-	<h1>Produit</h1>
+	<h1>{{'Acceuil' | trans}}</h1>
+	<h1>{{'Produit' | trans}}</h1>
 	{% for p in produits %}
 
 		<table class="table">
 			<thead>
 				<tr>
-					<th>Image</th>
-					<th>Nom</th>
-					<th>Description</th>
-					<th>Prix</th>
+					<th></th>
+					<th>{{'Nom' | trans}}</th>
+					<th>{{'Description' | trans}}</th>
+					<th>{{'Prix' | trans}}</th>
 				</tr>
 			</thead>
 			<tbody>
@@ -35,9 +36,9 @@
 		</td>
 		<td>
 			<a href="{{ path('app_produit', {'id' : p.id}) }}" class="btn btn-primary">
-				Voir
+				{{'Voir' | trans}}
 			</a>
 		</td>
 	</tbody>
 </tr>{% else %}
-<p>Liste de produits vide</p>{% endfor %}</tbody></table><h1>Ajouter un produit</h1>{{form(ajout)}}{% endblock %}
+<p>{{'Produits.Vide' | trans}}</p>{% endfor %}</tbody></table><h1>{{'Produits.Ajouter'| trans}}</h1>{{form(ajout)}}{% endblock %}

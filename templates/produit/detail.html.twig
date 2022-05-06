@@ -8,12 +8,12 @@
 	{% endif %}
 	<p>{{produit.Description}}</p>
 	<p>{{produit.Prix}}</p>
-	<a href="{{path('produit_edit', {'id' : produit.id})}}" class="btn btn-primary">Editer</a>
+	<a href="{{path('produit_edit', {'id' : produit.id})}}" class="btn btn-primary">{{'Editer' | trans}}</a>
 	<a href="{{ path('produit_delete', {'id' : produit.id}) }}" class="btn btn-primary">
-		Supprimer
+		{{'Supprimer' |  trans}}
 	</a>
 
-	<h3>Ajoutez ce NFT à votre panier !
+	<h3>{{'Produits.AjouterNFT' |  trans}}
 	</h3>
 
 	{{form(ajout)}}

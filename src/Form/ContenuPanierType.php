@@ -14,7 +14,7 @@ class ContenuPanierType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder
-            ->add('Quantite')
+            ->add('Quantité')
             ->add('Ajouter', SubmitType::class);
 
         ;

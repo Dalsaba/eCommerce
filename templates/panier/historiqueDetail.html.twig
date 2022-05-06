@@ -1,20 +1,26 @@
 {% extends 'base.html.twig' %}
 
+{% block title %}
+	{{'Historique' | trans}}
+{% endblock %}
 
 {% block body %}
 
-<h1>Commande n°
+<h1>{{'Commande' | trans}}
+	{{'Numero' | trans}}
 	{{panier.id}}
-	- Livrée le
+	-
+	{{'Livrée le' | trans}}
 	{{panier.Date | date('d/m/Y')}}</h1>
 
 <table class="table">
 	<thead>
 		<tr>
-			<th>Panier id</th>
-			<th>Produit</th>
-			<th>Quantité</th>
-			<th>Prix</th>
+			<th>{{'Panier' | trans}}
+				{{'Numero' | trans}}</th>
+			<th>{{'Produit' | trans}}</th>
+			<th>{{'Quantité'| trans}}</th>
+			<th>{{'Prix' | trans}}</th>
 		</tr>
 	</thead>
 	<tbody>
@@ -33,5 +39,5 @@
 		</tbody>
 	</tbody>
 {% else %}
-	<p>Liste d'article dans cp :  vide</p>
+	<p>{{'Historiques.Vide' | trans}}</p>
 </tbody></table>{% endfor %}{% endblock %}

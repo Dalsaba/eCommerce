@@ -1,0 +1,26 @@
+Nom : Nom
+Description : Description
+Prix : Prix
+Voir : Voir
+Produit : Produit
+Acceuil : Acceuil
+Panier : Panier
+Historique : Votre historique
+Numero : N°
+Montant : Total
+Date : Date
+Commande : Commande
+Quantité : Quantité
+Livrée le : Livrée le
+Supprimer : Supprimer
+Editer : Editer
+Produits :
+  Vide : Liste de produits vide
+  Ajouter : Ajouter un produit
+  Valider : Valider le panier
+  AjouterNFT : Ajouter ce NFT à votre panier!
+Historiques :
+  Vide : Vous n'avez pas encore commandé chez nous.
+Commandes :
+  Merci : Merci pour votre commande!
+  Envoi : Elle a été envoyée à votre adresse email
