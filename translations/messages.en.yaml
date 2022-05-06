@@ -14,12 +14,17 @@ Quantité : Quantity
 Livrée le : Sent the
 Supprimer : Delete
 Editer : Update
+Bienvenue : Welcome
+Bonjour : Hello
+Inscription : Sign up
+Connexion : Sign in
+Deconnexion : Sign out
 Produits :
   Vide : No product yet
   Ajouter : Add product
   Valider : Checkout
   AjouterNFT : Add this NFT to your basket!
-
+  Modifier : Update the product
 Historiques :
   Vide : You didn't ordered in our shop yet.
 Commandes :

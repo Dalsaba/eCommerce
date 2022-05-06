@@ -7,6 +7,7 @@ use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
+use Symfony\Contracts\Translation\TranslatorInterface;
 
 
 class ContenuPanierType extends AbstractType
@@ -14,7 +15,7 @@ class ContenuPanierType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder
-            ->add('Quantité')
+            ->add('Quantite')
             ->add('Ajouter', SubmitType::class);
 
         ;

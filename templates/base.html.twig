@@ -20,20 +20,20 @@
 	<header>
 		<nav>
 			<ul>
-				<a href="{{path('app_default')}}">Accueil</a>
-				<a href="{{path('app_panier')}}">Panier</a>
-				<a href="{{path('app_panier_hist')}}">Historique</a>
-				<a href="{{path('app_register')}}">Register</a>
-				<a href="{{path('app_login')}}">Connexion</a>
-				<a href="{{path('app_logout')}}">Deconnexion</a>
+				<a href="{{path('app_default')}}">{{'Acceuil' | trans}}</a>
+				<a href="{{path('app_panier')}}">{{'Panier' | trans}}</a>
+				<a href="{{path('app_panier_hist')}}">{{'Historique' | trans}}</a>
+				<a href="{{path('app_register')}}">{{'Inscription' | trans}}</a>
+				<a href="{{path('app_login')}}">{{'Connexion' | trans}}</a>
+				<a href="{{path('app_logout')}}">{{'Deconnexion' | trans}}</a>
 			</ul>
 		</nav>
 
 		{% if app.user %}
-			<p>Bonjour
+			<p>{{'Bonjour' | trans}}
 				{{app.user.Prenom}}!</p>
 		{% else %}
-			<p>Bonjour!</p>
+			<p>{{'Bonjour' | trans}}!</p>
 
 		{% endif %}
 	</header>
