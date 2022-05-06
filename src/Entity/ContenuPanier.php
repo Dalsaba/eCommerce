@@ -22,6 +22,10 @@ class ContenuPanier
     #[ORM\Column(type: 'date')]
     private $Date;
 
+    #[ORM\ManyToOne(targetEntity: Panier::class)]
+    #[ORM\JoinColumn(nullable: false)]
+    private $Panier;
+
 
 
     public function __construct(Produit $P) {
@@ -67,6 +71,18 @@ class ContenuPanier
     public function setDate(\DateTimeInterface $Date): self
     {
         $this->Date = $Date;
+
+        return $this;
+    }
+
+    public function getPanier(): ?Panier
+    {
+        return $this->Panier;
+    }
+
+    public function setPanier(?Panier $Panier): self
+    {
+        $this->Panier = $Panier;
 
         return $this;
     }

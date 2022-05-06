@@ -20,6 +20,12 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     #[ORM\Column(type: 'integer')]
     private $id;
 
+    #[ORM\Column(type: 'string', length: 255)]
+    private $Nom;
+
+    #[ORM\Column(type: 'string', length: 255)]
+    private $Prenom;
+
     #[ORM\Column(type: 'string', length: 180, unique: true)]
     private $email;
 
@@ -29,11 +35,6 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     #[ORM\Column(type: 'string')]
     private $password;
 
-    #[ORM\Column(type: 'string', length: 255)]
-    private $Nom;
-
-    #[ORM\Column(type: 'string', length: 255)]
-    private $Prenom;
 
     #[ORM\OneToMany(mappedBy: 'Utilisateur', targetEntity: Panier::class)]
     private $paniers;

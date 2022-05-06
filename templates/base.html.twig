@@ -21,12 +21,21 @@
 		<nav>
 			<ul>
 				<a href="{{path('app_default')}}">Accueil</a>
-				<a href="{{path('app_contenu_panier')}}">Panier</a>
+				<a href="{{path('app_contenu_panier')}}">CPanier</a>
+				<a href="{{path('app_panier')}}">Panier</a>
 				<a href="{{path('app_register')}}">Register</a>
 				<a href="{{path('app_login')}}">Connexion</a>
 				<a href="{{path('app_logout')}}">Deconnexion</a>
 			</ul>
 		</nav>
+
+		{% if app.user %}
+			<p>Bonjour
+				{{app.user.Prenom}}!</p>
+		{% else %}
+			<p>Bonjour!</p>
+
+		{% endif %}
 	</header>
 	<body>
 		<main class="container">

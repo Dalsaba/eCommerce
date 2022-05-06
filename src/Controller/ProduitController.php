@@ -35,14 +35,12 @@ class ProduitController extends AbstractController
            $em -> flush();
            $this-> addFlash('success', 'Produit ajouté au panier');
        }
-
-               //recupération de la table Categorie - a placer apres a sauvegarde
                $cp = $em -> getRepository(ContenuPanier::class)-> findAll();
 
         return $this->render('produit/detail.html.twig', [
             'produit' => $produit,
             'cp' => $cp,
-            'ajout'=> $form -> createView() // retourne la version html du form
+            'ajout'=> $form -> createView()
 
         ]);
 
