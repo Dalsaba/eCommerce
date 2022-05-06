@@ -9,6 +9,9 @@ use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Form\Extension\Core\Type\FileType;
 use Symfony\Component\Validator\Constraints\File;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
+use Symfony\Component\Form\Extension\Core\Type\TextType;
+use Symfony\Component\Form\Extension\Core\Type\IntegerType;
+
 
 
 class ProduitType extends AbstractType
@@ -16,12 +19,20 @@ class ProduitType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder
-            ->add('Nom')
-            ->add('Description')
-            ->add('Prix')
-            ->add('Stock')
+            ->add('Nom', TextType::class, [
+                'label' => 'Nom',
+            ])
+            ->add('Description', TextType::class, [
+                'label' => 'Description',
+            ])
+            ->add('Prix', IntegerType::class, [
+                'label' => 'Prix',
+            ])
+            ->add('Stock', IntegerType::class, [
+                'label' => 'Stock',
+            ])
             ->add('Image', FileType::class, [
-                'label' => 'Image (JPG, PNG)',
+                'label' => 'Image',
 
                 // unmapped means that this field is not associated to any entity property
                 'mapped' => false,
@@ -46,7 +57,9 @@ class ProduitType extends AbstractType
                     ])
                 ],
             ])
-            ->add('Sauvegarder', SubmitType::class);
+            ->add('Sauvegarder', SubmitType::class, [
+                'label' => 'Sauvegarder',
+            ]);
 
     }
 

@@ -1,4 +1,7 @@
-Nom : Name
+Nom : Lastname
+Prenom : FirstName
+Email : Email
+MDP : Password
 Description : Description
 Prix : Price
 Voir : See
@@ -10,6 +13,7 @@ Historique : Previous orders
 Numero : N°
 Montant : Subtotal
 Date : Date
+CGV : Agreement Terms
 Commande : Command
 Quantité : Quantity
 Livrée le : Sent the
@@ -20,6 +24,9 @@ Bonjour : Hello
 Inscription : Sign up
 Connexion : Sign in
 Deconnexion : Sign out
+Stock : Stock
+Image : Picture
+Sauvegarder : Save
 Produits :
   Vide : No product yet
   Ajouter : Add product
@@ -35,3 +42,5 @@ Erreurs :
   G : A generic error have occured. We apologize for the inconvenience. Please get back to the Homepage
   C : A server error have occured. We apologize for the inconvenience. Please get back to the Homepage
   Q : This page is not availble. Please get back to the Homepage.
+RFT :
+  minMessage : Your password should be at least {{ limit }} characters
