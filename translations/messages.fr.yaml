@@ -4,6 +4,7 @@ Prix : Prix
 Voir : Voir
 Produit : Produit
 Acceuil : Acceuil
+Erreur : Erreur
 Panier : Panier
 Historique : Votre historique
 Numero : N°
@@ -15,6 +16,10 @@ Livrée le : Livrée le
 Supprimer : Supprimer
 Editer : Editer
 Bienvenue : Bienvenue
+Bonjour : Bonjour
+Inscription : Inscription
+Connexion : Connexion
+Deconnexion : Deconnexion
 Produits :
   Vide : Liste de produits vide
   Ajouter : Ajouter un produit
@@ -26,3 +31,7 @@ Historiques :
 Commandes :
   Merci : Merci pour votre commande!
   Envoi : Elle a été envoyée à votre adresse email
+Erreurs :
+  G : Une erreur générique s'est déclanchée. Veuillez nous excusez pour la gène occasionnée. Merci de retourner à l'Acceuil.
+  C : Une erreur serveur s'est déclanchée. Veuillez nous excusez pour la gène occasionnée. Merci de retourner à l'Acceuil
+  Q : Cette page n'est plus disponible. Merci de retourner à l'Acceuil.

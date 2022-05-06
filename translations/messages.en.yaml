@@ -4,6 +4,7 @@ Prix : Price
 Voir : See
 Produit : Product
 Acceuil : Homepage
+Erreur : Error
 Panier : Basket
 Historique : Previous orders
 Numero : N°
@@ -30,3 +31,7 @@ Historiques :
 Commandes :
   Merci : Thank you for your order!
   Envoi : Your order has been sent to your email adress
+Erreurs :
+  G : A generic error have occured. We apologize for the inconvenience. Please get back to the Homepage
+  C : A server error have occured. We apologize for the inconvenience. Please get back to the Homepage
+  Q : This page is not availble. Please get back to the Homepage.
