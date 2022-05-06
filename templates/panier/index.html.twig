@@ -40,6 +40,6 @@
 			</tbody>
 		</tbody>
 	{% else %}
-		<p>Liste d'article dans cp :  vide</p>
+		<p>Liste d'article vide</p>
 	{% endfor %}
-</tbody></table></br></br><h1>Total</h1><p>{{ total}}€ HT</p></br><a href="{{ path('app_panier_validate', {'id' : panier.id}) }}" class="btn btn-primary">Valider le panier</a><div class="content">Test CSS</div>{% endblock %}
+</tbody></table></br></br><h1>Total</h1><p>{{ total}}€ HT</p></br><a href="{{ path('app_panier_validate', {'id' : panier.id}) }}" class="btn btn-primary">Valider le panier</a>{% endblock %}

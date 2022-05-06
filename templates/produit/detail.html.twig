@@ -19,33 +19,4 @@
 	{{form(ajout)}}
 
 	</br>
-	<p>********** Vérification panier **********
-	</p>
-
-	<table class="table">
-		<thead>
-			<tr>
-				<th>ID</th>
-				<th>Produit</th>
-				<th>Quantité</th>
-				<th>Panier</th>
-			</tr>
-		</thead>
-		<tbody>
-			{% for p in cp %}
-				<tr>
-					<td>
-						{{p.id}}</td>
-					<td>
-						{{p.Produit}}</td>
-					<td>
-						{{p.Quantite}}</td>
-					<td>
-						{{p.Panier.id}}</td>
-				</tr>
-			</tbody>
-		</tbody>
-	</tr>
-{% else %}
-	<p>Liste d'article dans cp :  vide</p>
-{% endfor %}</tbody></table>{% endblock %}
+{% endblock %}
