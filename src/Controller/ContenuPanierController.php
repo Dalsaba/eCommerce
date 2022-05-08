@@ -12,6 +12,9 @@ use App\Entity\ContenuPanier;
 
 class ContenuPanierController extends AbstractController
 {
+    /**
+     * Affichage des éléments du panier
+     */
     #[Route('/contenu/panier', name: 'app_contenu_panier')]
     public function index(ManagerRegistry $doctrine): Response
     {
@@ -26,7 +29,9 @@ class ContenuPanierController extends AbstractController
     }
 
 
-
+    /**
+     * Suppression du contenu du panier
+     */
     #[Route('/contenu/panierdelete/{id}', name: 'app_contenu_panier_delete')]
     public function delete(ContenuPanier $cp = null, ManagerRegistry $d): Response{
         if ($cp == null) {

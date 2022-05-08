@@ -14,6 +14,10 @@ use App\Entity\Produit;
 
 class DefaultController extends AbstractController
 {
+
+    /**
+     * Page d'accueil
+     */
     #[Route('/', name: 'app_default')]
     public function index(ManagerRegistry $doctrine, Request $request): Response
     {

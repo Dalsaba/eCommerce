@@ -11,6 +11,10 @@ use Doctrine\Persistence\ManagerRegistry;
 
 class PanierController extends AbstractController
 {
+
+    /**
+     * Page panier
+     */
     #[Route('/panier', name: 'app_panier')]
     public function index(ManagerRegistry $doctrine): Response
     {
@@ -25,6 +29,10 @@ class PanierController extends AbstractController
             'panier'=> $panier,
         ]);
     }
+
+    /**
+     * Validation du panier pour l'achat
+     */
     #[Route('/panier/validate', name: 'app_panier_validate')]
     public function validate(ManagerRegistry $doctrine): Response
     {
@@ -43,6 +51,9 @@ class PanierController extends AbstractController
         ]);
     }
 
+    /**
+     * Historique du contenu du panier
+     */
     #[Route('/panier/hist', name: 'app_panier_hist')]
     public function hist(ManagerRegistry $doctrine): Response
     {

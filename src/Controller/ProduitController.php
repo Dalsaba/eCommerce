@@ -17,6 +17,10 @@ use Symfony\Component\HttpFoundation\File\Exception\FileException;
 
 class ProduitController extends AbstractController
 {
+
+    /**
+     * Page des détails du produit
+     */
     #[Route('/produit/detail/{id}', name: 'app_produit')]
     public function index(Produit $produit = null, ManagerRegistry $doctrine, Request $request): Response
     {
@@ -48,6 +52,9 @@ class ProduitController extends AbstractController
 
     }
 
+    /**
+     * Page produit
+     */
     #[Route('/produit/{id}', name: 'produit_edit')]
     public function edit(Produit $produit = null, ManagerRegistry $doctrine, Request $request): Response{
         if ($produit == null) {
@@ -76,6 +83,9 @@ class ProduitController extends AbstractController
     }
 
 
+    /**
+     * Suppression d'un produit par l'admin
+     */
     #[Route('/produit/delete/{id}', name: 'produit_delete')]
     public function delete(Produit $produit = null, ManagerRegistry $d): Response{
         if ($produit == null) {

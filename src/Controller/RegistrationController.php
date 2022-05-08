@@ -19,6 +19,10 @@ use Doctrine\Persistence\ManagerRegistry;
 
 class RegistrationController extends AbstractController
 {
+
+    /**
+     * Création d'un compte
+     */
     #[Route('/register', name: 'app_register')]
     public function register(Request $request, UserPasswordHasherInterface $userPasswordHasher, UserAuthenticatorInterface $userAuthenticator,
     UserAuthenticator $authenticator, EntityManagerInterface $entityManager, ManagerRegistry $doctrine): Response
