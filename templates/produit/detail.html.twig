@@ -7,11 +7,15 @@
 		<img src="{{ asset ('uploads/' ~ produit.image) }}" alt="" style="width: 500px;">
 	{% endif %}
 	<p>{{produit.Description}}</p>
-	<p>{{produit.Prix}}</p>
-	<a href="{{path('produit_edit', {'id' : produit.id})}}" class="btn btn-primary">{{'Editer' | trans}}</a>
-	<a href="{{ path('produit_delete', {'id' : produit.id}) }}" class="btn btn-primary">
-		{{'Supprimer' |  trans}}
-	</a>
+	<p>{{produit.Prix}}
+		euros HT</p>
+	{% if is_granted("ROLE_ADMIN") %}
+		<a href="{{path('produit_edit', {'id' : produit.id})}}" class="btn btn-primary">{{'Editer' | trans}}</a>
+		<a href="{{ path('produit_delete', {'id' : produit.id}) }}" class="btn btn-primary">
+			{{'Supprimer' |  trans}}
+		</a>
+
+	{% endif %}
 
 	<h3>{{'Produits.AjouterNFT' |  trans}}
 	</h3>

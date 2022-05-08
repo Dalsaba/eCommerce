@@ -6,6 +6,7 @@ use App\Repository\PanierRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 #[ORM\Entity(repositoryClass: PanierRepository::class)]
 class Panier
@@ -15,9 +16,11 @@ class Panier
     #[ORM\Column(type: 'integer')]
     private $id;
 
+    #[Assert\NotBlank]
     #[ORM\ManyToOne(targetEntity: User::class, inversedBy: 'paniers')]
     private $Utilisateur;
 
+    #[Assert\NotBlank]
     #[ORM\Column(type: 'date')]
     private $Date;
 

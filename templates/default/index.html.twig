@@ -41,4 +41,4 @@
 		</td>
 	</tbody>
 </tr>{% else %}
-<p>{{'Produits.Vide' | trans}}</p>{% endfor %}</tbody></table><h1>{{'Produits.Ajouter'| trans}}</h1>{{form(ajout)}}{% endblock %}
+<p>{{'Produits.Vide' | trans}}</p>{% endfor %}</tbody></table>{% if is_granted("ROLE_ADMIN") %}<h1>{{'Produits.Ajouter'| trans}}</h1>{{form(ajout)}}{% endif %}{% endblock %}
